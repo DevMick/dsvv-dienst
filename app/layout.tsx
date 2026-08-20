@@ -6,10 +6,10 @@ import { LanguageProvider } from './lib/LanguageContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'DSVV Dienst - Service voor het ophalen en bezorgen van pakketten',
-  description: 'DSVV Dienst - Professionele service voor het ophalen en bezorgen van pakketten. Snel, betrouwbaar en veilig. Wij halen uw pakketten op en leveren ze bij u thuis.',
-  keywords: 'DSVV Dienst, pakketten, levering, ophaling, transport, logistiek, klantenservice',
-  authors: [{ name: 'DSVV Dienst' }],
+  title: 'DSV Dienst - Service voor het ophalen en bezorgen van pakketten',
+  description: 'DSV Dienst - Professionele service voor het ophalen en bezorgen van pakketten. Snel, betrouwbaar en veilig. Wij halen uw pakketten op en leveren ze bij u thuis.',
+  keywords: 'DSV Dienst, pakketten, levering, ophaling, transport, logistiek, klantenservice',
+  authors: [{ name: 'DSV Dienst' }],
   viewport: 'width=device-width, initial-scale=1',
   icons: {
     icon: [

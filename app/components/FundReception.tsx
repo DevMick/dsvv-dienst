@@ -161,23 +161,23 @@ const FundReception = () => {
                 </div>
               </div>
 
-              {/* Adresse */}
+              {/* Email */}
               <div>
                 <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
-                  {t.fundReception.fields.address} <span className="text-red-500">*</span>
+                  {t.fundReception.fields.email} <span className="text-red-500">*</span>
                 </label>
                 <input
-                  type="text"
-                  {...register('adresse', { required: t.fundReception.fields.addressRequired })}
+                  type="email"
+                  {...register('email', { required: t.fundReception.fields.emailRequired })}
                   className={`w-full px-3 py-2 text-sm border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
-                    errors.adresse ? 'border-red-500' : 'border-gray-300'
+                    errors.email ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  placeholder={t.fundReception.fields.addressPlaceholder}
+                  placeholder={t.fundReception.fields.emailPlaceholder}
                 />
-                {errors.adresse && (
+                {errors.email && (
                   <p className="mt-0.5 text-xs text-red-600 flex items-center">
                     <AlertCircle className="w-3 h-3 mr-1" />
-                    {String(errors.adresse?.message || t.fundReception.fields.requiredFallback)}
+                    {String(errors.email?.message || t.fundReception.fields.requiredFallback)}
                   </p>
                 )}
               </div>
@@ -304,6 +304,28 @@ const FundReception = () => {
                     )}
                   </div>
                 </div>
+              </div>
+
+              {/* Âge */}
+              <div>
+                <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
+                  {t.fundReception.fields.age} <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="number"
+                  {...register('age', { required: t.fundReception.fields.ageRequired, min: { value: 18, message: 'Vous devez avoir au moins 18 ans' } })}
+                  className={`w-full px-3 py-2 text-sm border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
+                    errors.age ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder={t.fundReception.fields.agePlaceholder}
+                  min="18"
+                />
+                {errors.age && (
+                  <p className="mt-0.5 text-xs text-red-600 flex items-center">
+                    <AlertCircle className="w-3 h-3 mr-1" />
+                    {String(errors.age?.message || t.fundReception.fields.requiredFallback)}
+                  </p>
+                )}
               </div>
 
               {/* Submit Button */}
