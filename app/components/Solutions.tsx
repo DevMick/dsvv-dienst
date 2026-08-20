@@ -11,35 +11,35 @@ const Solutions = () => {
       title: 'Quote, Book & Manage',
       description: 'Get instant quotes, book shipments, and manage your logistics in real-time',
       color: 'from-blue-500 to-cyan-500',
-      image: '📦'
+      image: '/image 1.jpeg'
     },
     {
       icon: Truck,
       title: 'Warehouse Management',
       description: 'Complete warehouse and inventory management solutions',
       color: 'from-purple-500 to-pink-500',
-      image: '🏭'
+      image: '/image 2.jpeg'
     },
     {
       icon: BarChart3,
       title: 'Track & Monitor',
       description: 'Real-time tracking and shipment visibility across all channels',
       color: 'from-green-500 to-emerald-500',
-      image: '📍'
+      image: '/image 3.jpeg'
     },
     {
       icon: Zap,
       title: 'Supply Chain Control',
       description: 'End-to-end supply chain management and optimization',
       color: 'from-orange-500 to-red-500',
-      image: '⚡'
+      image: '/image 4.jpeg'
     },
     {
       icon: Settings,
       title: 'API Integration',
       description: 'Seamless integration with your existing systems and platforms',
       color: 'from-indigo-500 to-blue-500',
-      image: '🔗'
+      image: '/image 5.jpeg'
     },
   ]
 
@@ -81,10 +81,14 @@ const Solutions = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${solution.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
 
               {/* Content */}
-              <div className="relative p-8 h-full flex flex-col">
-                {/* Icon/Image */}
-                <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${solution.color} flex items-center justify-center text-3xl mb-6 shadow-md`}>
-                  {solution.image}
+              <div className="relative px-8 pb-8 pt-0 h-full flex flex-col">
+                {/* Image */}
+                <div className="w-full -mx-8 -mt-8 mb-6 h-48 rounded-t-lg overflow-hidden bg-gray-200 flex items-center justify-center">
+                  <img
+                    src={solution.image}
+                    alt={solution.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
 
                 {/* Title & Description */}
