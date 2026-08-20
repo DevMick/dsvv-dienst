@@ -1,5 +1,8 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Solutions from './components/Solutions'
+import Industries from './components/Industries'
+import Stats from './components/Stats'
 import About from './components/About'
 import Services from './components/Services'
 import Testimonials from './components/Testimonials'
@@ -14,6 +17,9 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Solutions />
+        <Industries />
+        <Stats />
         <About />
         <Services />
         <FundReception />
