@@ -31,7 +31,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-950">
+    <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-r from-slate-900 via-slate-800 to-blue-900">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Gradient orbs */}
@@ -95,7 +95,7 @@ const Hero = () => {
               className="mb-6"
             >
               <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-sm font-semibold">
-                ✨ Service d'excellence en logistique
+                Global Transport & Logistics Excellence
               </span>
             </motion.div>
 

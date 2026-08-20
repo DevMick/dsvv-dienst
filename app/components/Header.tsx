@@ -32,8 +32,13 @@ const Header = () => {
 
   const menuItems = [
     { name: t.header.home, id: 'accueil' },
-    { name: t.header.services, id: 'services' },
-    { name: t.header.fundReception, id: 'fund-reception' },
+    { name: 'Solutions', id: 'services', submenu: [
+      { name: 'Express Pickup', id: 'services' },
+      { name: 'Fast Delivery', id: 'services' },
+      { name: 'Premium Service', id: 'services' }
+    ]},
+    { name: 'Funds Reception', id: 'fund-reception' },
+    { name: 'About', id: 'about' },
   ]
 
   const LanguageSwitcher = ({ compact = false }: { compact?: boolean }) => (
