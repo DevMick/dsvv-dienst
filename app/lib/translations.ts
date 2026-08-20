@@ -196,14 +196,6 @@ export const translations: Record<Language, Translations> = {
           title: 'Traceren & Monitoren',
           description: 'Real-time tracking en zichtbaarheid van zendingen over alle kanalen',
         },
-        {
-          title: 'Toeleveringskettenbeheer',
-          description: 'End-to-end supply chain management en optimalisatie',
-        },
-        {
-          title: 'API-integratie',
-          description: 'Naadloze integratie met uw bestaande systemen en platforms',
-        },
       ],
       learnMore: 'Meer informatie',
     },
@@ -461,14 +453,6 @@ export const translations: Record<Language, Translations> = {
         {
           title: 'Suivi & Surveillance',
           description: 'Suivi en temps réel et visibilité des envois sur tous les canaux',
-        },
-        {
-          title: 'Contrôle de la Chaîne d\'Approvisionnement',
-          description: 'Gestion et optimisation complètes de la chaîne d\'approvisionnement',
-        },
-        {
-          title: 'Intégration API',
-          description: 'Intégration transparente avec vos systèmes et plateformes existants',
         },
       ],
       learnMore: 'En savoir plus',
