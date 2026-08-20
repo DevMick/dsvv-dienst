@@ -1,0 +1,23 @@
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Services from './components/Services'
+import Testimonials from './components/Testimonials'
+import Gallery from './components/Gallery'
+import FundReception from './components/FundReception'
+import Footer from './components/Footer'
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-blue-50">
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <FundReception />
+        <Testimonials />
+        <Gallery />
+      </main>
+      <Footer />
+    </div>
+  )
+}
