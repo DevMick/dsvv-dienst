@@ -227,6 +227,7 @@ export const translations: Record<Language, Translations> = {
         { title: 'Express Bezorging', description: 'Snelle en veilige bezorging' },
         { title: 'Expert Team', description: 'Gekwalificeerde en ervaren professionals' },
         { title: '24/7 Service', description: 'Altijd beschikbaar' },
+        { title: 'DSV Expertise', description: 'Logistieke Excellence' },
       ],
       features: [
         {
@@ -413,6 +414,7 @@ export const translations: Record<Language, Translations> = {
         { title: 'Livraison Express', description: 'Livraison rapide et sécurisée' },
         { title: 'Équipe Experte', description: 'Professionnels qualifiés et expérimentés' },
         { title: 'Service 24/7', description: 'Toujours disponible' },
+        { title: 'Expertise DSV', description: 'Excellence Logistique' },
       ],
       features: [
         {
