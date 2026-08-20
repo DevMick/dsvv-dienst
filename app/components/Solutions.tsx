@@ -69,11 +69,6 @@ const Solutions = () => {
                   {solution.description}
                 </p>
 
-                {/* CTA */}
-                <div className="flex items-center text-cyan-600 font-semibold text-sm group-hover:gap-2 gap-0 transition-all duration-300">
-                  <span>{t.solutions.learnMore}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
               </div>
 
               {/* Hover Border */}

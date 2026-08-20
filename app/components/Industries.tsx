@@ -10,10 +10,11 @@ const Industries = () => {
 
   const iconMap = [Car, Cpu, Heart, Hammer, ShoppingCart, Plane]
 
-  const industries = t.industries.items.map((item, index) => ({
+  const industriesData = t.industries.items.slice(0, 4)
+  const industries = industriesData.map((item, index) => ({
     ...item,
     icon: iconMap[index],
-    color: ['from-blue-500 to-cyan-500', 'from-purple-500 to-pink-500', 'from-red-500 to-pink-500', 'from-orange-500 to-yellow-500', 'from-green-500 to-emerald-500', 'from-indigo-500 to-blue-500'][index]
+    color: ['from-blue-500 to-cyan-500', 'from-purple-500 to-pink-500', 'from-red-500 to-pink-500', 'from-orange-500 to-yellow-500'][index]
   }))
 
   return (
@@ -52,7 +53,7 @@ const Industries = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10"
         >
           {industries.map((industry, index) => (
             <motion.div
@@ -76,12 +77,6 @@ const Industries = () => {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {industry.description}
               </p>
-
-              {/* CTA */}
-              <div className="flex items-center text-cyan-600 font-semibold text-sm group-hover:gap-2 gap-0 transition-all duration-300">
-                <span>{t.industries.seeMore}</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
 
               {/* Accent Line */}
               <div className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${industry.color} group-hover:w-full transition-all duration-300`} />
