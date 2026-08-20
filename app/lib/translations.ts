@@ -118,9 +118,9 @@ export interface Translations {
       phone: string
       phonePlaceholder: string
       phoneRequired: string
-      address: string
-      addressPlaceholder: string
-      addressRequired: string
+      email: string
+      emailPlaceholder: string
+      emailRequired: string
       importantInfoTitle: string
       importantInfoText: string
       itemDescription: string
@@ -137,6 +137,9 @@ export interface Translations {
       amount: string
       amountRequired: string
       amountMin: string
+      age: string
+      agePlaceholder: string
+      ageRequired: string
       requiredFallback: string
     }
     submitButton: string
