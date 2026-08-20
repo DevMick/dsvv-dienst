@@ -1,14 +1,24 @@
 export type Language = 'nl' | 'fr'
 
-interface ServiceItem {
+interface SolutionItem {
   title: string
   description: string
-  features: string[]
+}
+
+interface IndustryItem {
+  title: string
+  description: string
 }
 
 interface StatItem {
   number: string
   label: string
+}
+
+interface ServiceItem {
+  title: string
+  description: string
+  features: string[]
 }
 
 interface TestimonialItem {
@@ -42,6 +52,33 @@ export interface Translations {
     subtitleAnd: string
     subtitleSafe: string
     ctaButton: string
+  }
+  solutions: {
+    headingPre: string
+    headingHighlight: string
+    description: string
+    items: SolutionItem[]
+    learnMore: string
+  }
+  industries: {
+    heading: string
+    subheading: string
+    description: string
+    seeMore: string
+    items: IndustryItem[]
+  }
+  stats: {
+    heading: string
+    description: string
+    items: StatItem[]
+  }
+  about: {
+    heading: string
+    subheading: string
+    description: string
+    companyDescription: string
+    promise: string
+    items: string[]
   }
   services: {
     headingPre: string
@@ -131,27 +168,117 @@ export const translations: Record<Language, Translations> = {
       home: 'Home',
       services: 'Diensten',
       fundReception: 'Ontvangst van fondsen',
-      brand: 'herstelservice',
+      brand: 'DSVV Dienst',
     },
     hero: {
-      titleTop: 'DSV',
-      titleBottom: 'herstelservice',
+      titleTop: 'DSVV',
+      titleBottom: 'Dienst',
       subtitlePre: 'Professionele ophaal- en bezorgservice voor pakketten',
       subtitleFast: 'snel',
       subtitleAnd: 'en',
       subtitleSafe: 'veilig.',
       ctaButton: 'Formulier voor fondsenontvangst',
     },
+    solutions: {
+      headingPre: 'Toegang tot alle',
+      headingHighlight: 'logistieke oplossingen op één plek',
+      description: 'Uitgebreide digitale oplossingen ontworpen om uw logistieke operaties te stroomlijnen',
+      items: [
+        {
+          title: 'Offerte, Boeken & Beheren',
+          description: 'Krijg al direct offertes, boek zendingen en beheer uw logistiek in real-time',
+        },
+        {
+          title: 'Magazijnbeheer',
+          description: 'Complete magazijn- en voorraadbeheeroplossingen',
+        },
+        {
+          title: 'Traceren & Monitoren',
+          description: 'Real-time tracking en zichtbaarheid van zendingen over alle kanalen',
+        },
+        {
+          title: 'Toeleveringskettenbeheer',
+          description: 'End-to-end supply chain management en optimalisatie',
+        },
+        {
+          title: 'API-integratie',
+          description: 'Naadloze integratie met uw bestaande systemen en platforms',
+        },
+      ],
+      learnMore: 'Meer informatie',
+    },
+    industries: {
+      heading: 'Wat uw branche ook is,',
+      subheading: 'we zijn uw logistieke partner',
+      description: 'Branchespecifieke expertise en oplossingen voor elke sector',
+      seeMore: 'Meer bekijken',
+      items: [
+        {
+          title: 'Automobiel',
+          description: 'Gespecialiseerde logistieke oplossingen voor automobielproductie en toeleveringsketens',
+        },
+        {
+          title: 'Technologie',
+          description: 'Snelle en veilige levering van elektronica en technische componenten',
+        },
+        {
+          title: 'Gezondheidszorg',
+          description: 'Temperatuurgecontroleerde en conforme logistiek voor medische benodigdheden',
+        },
+        {
+          title: 'Industrie',
+          description: 'Zware logistieke oplossingen voor industriële apparatuur en materialen',
+        },
+        {
+          title: 'Consument',
+          description: 'E-commerce en retaillogistiek met snelle leveringsmogelijkheden',
+        },
+        {
+          title: 'Luchtvaart',
+          description: 'Precisilogistiek voor luchtvaart- en defensie-industrie-vereisten',
+        },
+      ],
+    },
+    stats: {
+      heading: 'DSVV Dienst in Nummers',
+      description: 'Demonstratie van onze omvang, bereik en inzet voor excellence',
+      items: [
+        {
+          number: '+5.000',
+          label: 'Succesvolle leveringen',
+        },
+        {
+          number: '90',
+          label: 'Landen en regio\'s',
+        },
+        {
+          number: '~150.000',
+          label: 'Teamleden',
+        },
+      ],
+    },
+    about: {
+      heading: 'Over',
+      subheading: 'DSVV Dienst',
+      description: 'Leidende aanbieder van ophaal- en bezorgservices met geavanceerde logistieke oplossingen en vertrouwde partnerbenadering',
+      companyDescription: 'DSVV Dienst is een betrouwbare logistieke partner die uitgebreide ophaal- en bezorgoplossingen in de regio biedt. Met geavanceerde technologie en een team van gecertificeerde professionals zorgen we ervoor dat uw pakketten veilig en op tijd hun bestemming bereiken.',
+      promise: 'Onze belofte',
+      items: [
+        'Bliksemsnelle ophalingen binnen 2 uur',
+        'Real-time GPS-tracking van uw pakketten',
+        'Premium verpakking en volledige verzekering',
+        'Gecertificeerde en ervaren professionals',
+        'Concurrerende tarieven en transparante prijzen',
+      ],
+    },
     services: {
       headingPre: 'Onze',
       headingHighlight: 'diensten',
-      description:
-        'DSV helpt u met al uw behoeften voor het ophalen en bezorgen van pakketten, met professionele diensten en erkende expertise.',
+      description: 'DSV helpt u met al uw behoeften voor het ophalen en bezorgen van pakketten, met professionele diensten en erkende expertise.',
       items: [
         {
           title: 'Express ophaling',
-          description:
-            'Supersnelle ophaalservice met realtime tracking en maximale veiligheidsgarantie.',
+          description: 'Supersnelle ophaalservice met realtime tracking en maximale veiligheidsgarantie.',
           features: [
             'Ophaling binnen 2 uur',
             'Realtime GPS-tracking',
@@ -161,8 +288,7 @@ export const translations: Record<Language, Translations> = {
         },
         {
           title: 'Snelle levering',
-          description:
-            'Ultrasnelle levering met onze vloot elektrische voertuigen en een team van experts.',
+          description: 'Ultrasnelle levering met onze vloot elektrische voertuigen en een team van experts.',
           features: [
             'Levering 24/7',
             'Elektrische voertuigen',
@@ -172,8 +298,7 @@ export const translations: Record<Language, Translations> = {
         },
         {
           title: 'Premiumservice',
-          description:
-            'Maatwerkoplossingen van hoge kwaliteit met toegewijde begeleiding en exclusieve garanties.',
+          description: 'Maatwerkoplossingen van hoge kwaliteit met toegewijde begeleiding en exclusieve garanties.',
           features: [
             'Toegewijde adviseur',
             'Premiumgarantie',
@@ -183,45 +308,41 @@ export const translations: Record<Language, Translations> = {
         },
       ],
       stats: [
-        { number: '24/7', label: 'Expressservice' },
-        { number: '1000+', label: 'Tevreden klanten' },
-        { number: '100%', label: 'Gegarandeerde veiligheid' },
-        { number: '50+', label: 'Bediende steden' },
+        { number: '5000+', label: 'Snelle leveringen' },
+        { number: '98%', label: 'Tevreden klanten' },
+        { number: '100%', label: 'Nationale dekking' },
+        { number: '365d', label: 'Support 24/7' },
       ],
     },
     testimonials: {
       headingHighlight: 'Klant',
-      headingPost: 'getuigenissen',
+      headingPost: 'testimonials',
       description: 'Ontdek wat onze klanten zeggen over onze ophaal- en bezorgdiensten.',
       items: [
         {
           name: 'Marieke van der Berg',
           role: 'Particuliere klant',
-          content:
-            'Ik heb alles in orde gemaakt met de service en mijn geld ontvangen via een onmiddellijke overschrijving. Bedankt voor jullie betrouwbaarheid.',
+          content: 'Ik heb alles in orde gemaakt met de service en mijn geld ontvangen via een onmiddellijke overschrijving. Bedankt voor jullie betrouwbaarheid.',
         },
         {
           name: 'Pieter Janssen',
           role: 'Ondernemer',
-          content:
-            'Ik doe regelmatig een beroep op herstelservicedsv voor mijn professionele overschrijvingen. Altijd op tijd, perfecte service!',
+          content: 'Ik doe regelmatig een beroep op DSVV Dienst voor mijn professionele overschrijvingen. Altijd op tijd, perfecte service!',
         },
         {
           name: 'Sophie de Vries',
           role: 'Handelaar',
-          content:
-            'herstelservicedsv helpt ons enorm bij onze fondsenontvangsten. Snelle, veilige service en zeer scherpe tarieven.',
+          content: 'DSVV Dienst helpt ons enorm bij onze fondsenontvangsten. Snelle, veilige service en zeer scherpe tarieven.',
         },
       ],
       ctaHeading: 'Word ook een tevreden klant',
-      ctaText: 'Vertrouw op herstelservicedsv voor uw ophaal- en bezorgbehoeften.',
+      ctaText: 'Vertrouw op DSVV Dienst voor uw ophaal- en bezorgbehoeften.',
       ctaButton: 'Nu beginnen',
     },
     gallery: {
       headingPre: 'Onze',
       headingHighlight: 'Expertise',
-      description:
-        'Ontdek onze knowhow en professionele uitrusting voor het ophalen en bezorgen van pakketten.',
+      description: 'Ontdek onze knowhow en professionele uitrusting voor het ophalen en bezorgen van pakketten.',
       items: [
         { title: 'Pakket Ophalen', description: 'Professionele ophaalservice' },
         { title: 'Express Bezorging', description: 'Snelle en veilige bezorging' },
@@ -251,8 +372,7 @@ export const translations: Record<Language, Translations> = {
       heading: 'Formulier voor fondsenontvangst',
       infoBoxTitle: 'Ontvangst van fondsen',
       infoBoxText: 'Snelle en veilige verwerking',
-      infoBoxSubtext:
-        'Vul het formulier correct in om je geld vandaag nog per directe overboeking te ontvangen.',
+      infoBoxSubtext: 'Vul het formulier correct in om je geld vandaag nog per directe overboeking te ontvangen.',
       formTitle: 'Formulier voor fondsenontvangst',
       errorTitle: 'Fout',
       genericError: 'Fout bij het registreren. Probeer het opnieuw of neem direct contact met ons op.',
@@ -267,8 +387,7 @@ export const translations: Record<Language, Translations> = {
         addressPlaceholder: 'Uw volledige adres',
         addressRequired: 'Adres is verplicht',
         importantInfoTitle: 'Belangrijke informatie',
-        importantInfoText:
-          'Let op: u hoeft niets te betalen; de koper heeft al alles betaald, dus voor u is alles gratis.',
+        importantInfoText: 'Let op: u hoeft niets te betalen; de koper heeft al alles betaald, dus voor u is alles gratis.',
         itemDescription: 'Beschrijving van het artikel',
         itemDescriptionPlaceholder: 'Gedetailleerde beschrijving van het artikel',
         bankInfoTitle: 'Bankinformatie',
@@ -288,14 +407,12 @@ export const translations: Record<Language, Translations> = {
       submitButton: 'Aanvraag verzenden',
       submitting: 'Verzenden...',
       successTitle: 'We hebben uw aanvraag ontvangen',
-      successText:
-        'Een DSV agent zal contact met u opnemen via WhatsApp. Gelieve de nodige afspraken te maken om uw geld vandaag nog te ontvangen via onmiddellijke overschrijving.',
+      successText: 'Een DSVV agent zal contact met u opnemen via WhatsApp. Gelieve de nodige afspraken te maken om uw geld vandaag nog te ontvangen via onmiddellijke overschrijving.',
       successThanks: 'Dank U',
       closeButton: 'Sluiten',
     },
     footer: {
-      description:
-        'Uw betrouwbare partner voor het ophalen en bezorgen van pakketten. Snelle, betrouwbare en veilige service door heel Nederland.',
+      description: 'Uw betrouwbare partner voor het ophalen en bezorgen van pakketten. Snelle, betrouwbare en veilige service door het hele land.',
       badge: '24/7 Service',
       servicesTitle: 'Onze Diensten',
       services: ['Pakket Ophalen', 'Express Bezorging', '24/7 Service', 'Realtime Tracking'],
@@ -303,10 +420,10 @@ export const translations: Record<Language, Translations> = {
       quickLinks: ['Home', 'Diensten', 'Geldoverdracht'],
       contactTitle: 'Contact',
       contactInfo: [
-        { title: 'Email', info: 'registratie@dsv-klantenservice.com' },
+        { title: 'Email', info: 'ondersteuning@dsvv-dienst.com' },
         { title: 'Openingstijden', info: '24h/24 - 7j/7' },
       ],
-      copyright: '© 2024 herstelservice. Alle rechten voorbehouden.',
+      copyright: '© 2026 DSVV Dienst. Alle rechten voorbehouden.',
       privacyPolicy: 'Privacybeleid',
       termsOfUse: 'Gebruiksvoorwaarden',
       legalNotice: 'Juridische vermeldingen',
@@ -317,27 +434,117 @@ export const translations: Record<Language, Translations> = {
       home: 'Accueil',
       services: 'Services',
       fundReception: 'Réception de fonds',
-      brand: 'herstelservice',
+      brand: 'DSVV Dienst',
     },
     hero: {
-      titleTop: 'DSV',
-      titleBottom: 'herstelservice',
+      titleTop: 'DSVV',
+      titleBottom: 'Dienst',
       subtitlePre: 'Service professionnel de collecte et de livraison de colis',
       subtitleFast: 'rapide',
       subtitleAnd: 'et',
       subtitleSafe: 'sécurisé.',
       ctaButton: 'Formulaire de réception de fonds',
     },
+    solutions: {
+      headingPre: 'Accédez à toutes vos',
+      headingHighlight: 'solutions logistiques en un seul endroit',
+      description: 'Solutions numériques complètes conçues pour rationaliser vos opérations logistiques',
+      items: [
+        {
+          title: 'Devis, Réservation & Gestion',
+          description: 'Obtenez des devis instantanés, réservez des envois et gérez votre logistique en temps réel',
+        },
+        {
+          title: 'Gestion des Entrepôts',
+          description: 'Solutions complètes de gestion des entrepôts et des stocks',
+        },
+        {
+          title: 'Suivi & Surveillance',
+          description: 'Suivi en temps réel et visibilité des envois sur tous les canaux',
+        },
+        {
+          title: 'Contrôle de la Chaîne d\'Approvisionnement',
+          description: 'Gestion et optimisation complètes de la chaîne d\'approvisionnement',
+        },
+        {
+          title: 'Intégration API',
+          description: 'Intégration transparente avec vos systèmes et plateformes existants',
+        },
+      ],
+      learnMore: 'En savoir plus',
+    },
+    industries: {
+      heading: 'Quel que soit votre secteur,',
+      subheading: 'nous sommes votre partenaire logistique',
+      description: 'Expertise et solutions spécifiques au secteur pour chaque industrie',
+      seeMore: 'Voir plus',
+      items: [
+        {
+          title: 'Automobile',
+          description: 'Solutions logistiques spécialisées pour la fabrication automobile et les chaînes d\'approvisionnement',
+        },
+        {
+          title: 'Technologie',
+          description: 'Livraison rapide et sécurisée des équipements électroniques et des composants technologiques',
+        },
+        {
+          title: 'Santé',
+          description: 'Logistique contrôlée en température et conforme pour les fournitures médicales',
+        },
+        {
+          title: 'Industrie',
+          description: 'Solutions logistiques lourdes pour les équipements industriels et les matériaux',
+        },
+        {
+          title: 'Consommateur',
+          description: 'Logistique e-commerce et retail avec capacités de livraison rapide',
+        },
+        {
+          title: 'Aérospatiale',
+          description: 'Logistique de précision pour les exigences de l\'industrie aéronautique et de défense',
+        },
+      ],
+    },
+    stats: {
+      heading: 'DSVV Dienst en Chiffres',
+      description: 'Démonstration de notre envergure, notre portée et notre engagement envers l\'excellence',
+      items: [
+        {
+          number: '+5 000',
+          label: 'Livraisons Réussies',
+        },
+        {
+          number: '90',
+          label: 'Pays et Régions',
+        },
+        {
+          number: '~150 000',
+          label: 'Membres de l\'Équipe',
+        },
+      ],
+    },
+    about: {
+      heading: 'À Propos',
+      subheading: 'DSVV Dienst',
+      description: 'Fournisseur leader de services de collecte et de livraison avec des solutions logistiques avancées et une approche de partenariat fiable',
+      companyDescription: 'DSVV Dienst est un partenaire logistique fiable offrant des solutions complètes de collecte et de livraison dans la région. Avec la technologie de pointe et une équipe de professionnels certifiés, nous veillons à ce que vos colis atteignent leur destination en toute sécurité et à temps.',
+      promise: 'Notre Promesse',
+      items: [
+        'Collectes éclair dans les 2 heures',
+        'Suivi GPS en temps réel de vos colis',
+        'Emballage premium et assurance complète',
+        'Professionnels certifiés et expérimentés',
+        'Tarifs compétitifs et prix transparents',
+      ],
+    },
     services: {
       headingPre: 'Nos',
       headingHighlight: 'services',
-      description:
-        'DSV vous accompagne pour tous vos besoins de collecte et de livraison de colis, avec des services professionnels et une expertise reconnue.',
+      description: 'DSV vous aide pour tous vos besoins de collecte et de livraison de colis, avec des services professionnels et une expertise reconnue.',
       items: [
         {
           title: 'Collecte express',
-          description:
-            'Service de collecte ultra-rapide avec suivi en temps réel et garantie de sécurité maximale.',
+          description: 'Service de collecte ultra-rapide avec suivi en temps réel et garantie de sécurité maximale.',
           features: [
             'Collecte sous 2 heures',
             'Suivi GPS en temps réel',
@@ -347,8 +554,7 @@ export const translations: Record<Language, Translations> = {
         },
         {
           title: 'Livraison rapide',
-          description:
-            'Livraison ultra-rapide avec notre flotte de véhicules électriques et une équipe d’experts.',
+          description: 'Livraison ultra-rapide avec notre flotte de véhicules électriques et une équipe d\'experts.',
           features: [
             'Livraison 24/7',
             'Véhicules électriques',
@@ -357,22 +563,21 @@ export const translations: Record<Language, Translations> = {
           ],
         },
         {
-          title: 'Service premium',
-          description:
-            'Solutions sur mesure de haute qualité avec un accompagnement dédié et des garanties exclusives.',
+          title: 'Service Premium',
+          description: 'Solutions sur mesure de haute qualité avec accompagnement dédié et garanties exclusives.',
           features: [
             'Conseiller dédié',
             'Garantie premium',
             'Service VIP',
-            'Assistance prioritaire',
+            'Support prioritaire',
           ],
         },
       ],
       stats: [
-        { number: '24/7', label: 'Service express' },
-        { number: '1000+', label: 'Clients satisfaits' },
-        { number: '100%', label: 'Sécurité garantie' },
-        { number: '50+', label: 'Villes desservies' },
+        { number: '5000+', label: 'Livraisons rapides' },
+        { number: '98%', label: 'Clients satisfaits' },
+        { number: '100%', label: 'Couverture nationale' },
+        { number: '365j', label: 'Support 24/7' },
       ],
     },
     testimonials: {
@@ -383,31 +588,27 @@ export const translations: Record<Language, Translations> = {
         {
           name: 'Marieke van der Berg',
           role: 'Cliente particulière',
-          content:
-            'J’ai tout réglé avec le service et reçu mon argent par virement immédiat. Merci pour votre fiabilité.',
+          content: 'J\'ai tout réglé avec le service et reçu mon argent par virement immédiat. Merci pour votre fiabilité.',
         },
         {
           name: 'Pieter Janssen',
           role: 'Entrepreneur',
-          content:
-            'Je fais régulièrement appel à herstelservicedsv pour mes virements professionnels. Toujours à l’heure, service parfait !',
+          content: 'Je fais régulièrement appel à DSVV Dienst pour mes virements professionnels. Toujours à l\'heure, service parfait !',
         },
         {
           name: 'Sophie de Vries',
           role: 'Commerçante',
-          content:
-            'herstelservicedsv nous aide énormément pour nos réceptions de fonds. Service rapide, sécurisé et tarifs très compétitifs.',
+          content: 'DSVV Dienst nous aide énormément pour nos réceptions de fonds. Service rapide, sécurisé et tarifs très compétitifs.',
         },
       ],
       ctaHeading: 'Devenez vous aussi un client satisfait',
-      ctaText: 'Faites confiance à herstelservicedsv pour vos besoins de collecte et de livraison.',
+      ctaText: 'Faites confiance à DSVV Dienst pour vos besoins de collecte et de livraison.',
       ctaButton: 'Commencer maintenant',
     },
     gallery: {
       headingPre: 'Notre',
       headingHighlight: 'Expertise',
-      description:
-        'Découvrez notre savoir-faire et notre équipement professionnel pour la collecte et la livraison de colis.',
+      description: 'Découvrez notre savoir-faire et notre équipement professionnel pour la collecte et la livraison de colis.',
       items: [
         { title: 'Collecte de colis', description: 'Service de collecte professionnel' },
         { title: 'Livraison Express', description: 'Livraison rapide et sécurisée' },
@@ -421,7 +622,7 @@ export const translations: Record<Language, Translations> = {
         },
         {
           title: 'Livraison rapide',
-          description: 'Transport express avec suivi en temps réel jusqu’à destination',
+          description: 'Transport express avec suivi en temps réel jusqu\'à destination',
         },
         {
           title: 'Service 24/7',
@@ -437,65 +638,61 @@ export const translations: Record<Language, Translations> = {
       heading: 'Formulaire de réception de fonds',
       infoBoxTitle: 'Réception de fonds',
       infoBoxText: 'Traitement rapide et sécurisé',
-      infoBoxSubtext:
-        'Remplissez correctement le formulaire pour recevoir votre argent dès aujourd’hui par virement immédiat.',
+      infoBoxSubtext: 'Remplissez correctement le formulaire pour recevoir votre argent dès aujourd\'hui par virement immédiat.',
       formTitle: 'Formulaire de réception de fonds',
       errorTitle: 'Erreur',
-      genericError: 'Erreur lors de l’enregistrement. Veuillez réessayer ou nous contacter directement.',
+      genericError: 'Erreur lors de l\'enregistrement. Veuillez réessayer ou nous contacter directement.',
       fields: {
         fullName: 'Nom complet',
         fullNamePlaceholder: 'Votre nom complet',
-        fullNameRequired: 'Le nom complet est requis',
+        fullNameRequired: 'Le nom complet est obligatoire',
         phone: 'Téléphone',
         phonePlaceholder: '01 23 45 67 89',
-        phoneRequired: 'Le numéro de téléphone est requis',
+        phoneRequired: 'Le numéro de téléphone est obligatoire',
         address: 'Adresse complète',
         addressPlaceholder: 'Votre adresse complète',
-        addressRequired: 'L’adresse est requise',
-        importantInfoTitle: 'Information importante',
-        importantInfoText:
-          'Attention : vous n’avez rien à payer ; l’acheteur a déjà tout réglé, tout est donc gratuit pour vous.',
-        itemDescription: 'Description de l’article',
-        itemDescriptionPlaceholder: 'Description détaillée de l’article',
+        addressRequired: 'L\'adresse est obligatoire',
+        importantInfoTitle: 'Informations importantes',
+        importantInfoText: 'Attention : vous n\'avez rien à payer ; l\'acheteur a déjà tout réglé, donc pour vous c\'est gratuit.',
+        itemDescription: 'Description de l\'article',
+        itemDescriptionPlaceholder: 'Description détaillée de l\'article',
         bankInfoTitle: 'Informations bancaires',
         cardBE: 'Numéro de carte BE',
         cardBEPlaceholder: 'Numéro de carte BE',
-        cardBERequired: 'La carte BE est requise',
+        cardBERequired: 'La carte BE est obligatoire',
         card525149: 'Numéro de carte 52/49/51',
         card525149Placeholder: 'Numéro de carte 52/49/51',
-        card525149Required: 'La carte 52/49/51 est requise',
-        expirationDate: 'Date d’expiration',
-        expirationDateRequired: 'La date d’expiration est requise',
-        amount: 'Montant à recevoir',
-        amountRequired: 'Le montant est requis',
+        card525149Required: 'La carte 52/49/51 est obligatoire',
+        expirationDate: 'Date d\'expiration',
+        expirationDateRequired: 'La date d\'expiration est obligatoire',
+        amount: 'Montant à Recevoir',
+        amountRequired: 'Le montant est obligatoire',
         amountMin: 'Le montant doit être supérieur à 0',
-        requiredFallback: 'Ce champ est requis',
+        requiredFallback: 'Ce champ est obligatoire',
       },
-      submitButton: 'Envoyer la demande',
-      submitting: 'Envoi en cours...',
-      successTitle: 'Nous avons bien reçu votre demande',
-      successText:
-        'Un agent DSV vous contactera via WhatsApp. Merci de prendre les dispositions nécessaires pour recevoir votre argent dès aujourd’hui par virement immédiat.',
+      submitButton: 'Envoyer la Demande',
+      submitting: 'Envoi...',
+      successTitle: 'Nous avons reçu votre demande',
+      successText: 'Un agent DSVV vous contactera via WhatsApp. Veuillez prendre les arrangements nécessaires pour recevoir votre argent dès aujourd\'hui par virement immédiat.',
       successThanks: 'Merci',
       closeButton: 'Fermer',
     },
     footer: {
-      description:
-        'Votre partenaire de confiance pour la collecte et la livraison de colis. Un service rapide, fiable et sécurisé dans tout le pays.',
+      description: 'Votre partenaire fiable pour la collecte et la livraison de colis. Service rapide, fiable et sécurisé dans tout le pays.',
       badge: 'Service 24/7',
       servicesTitle: 'Nos Services',
-      services: ['Collecte de colis', 'Livraison Express', 'Service 24/7', 'Suivi en temps réel'],
-      quickLinksTitle: 'Liens rapides',
-      quickLinks: ['Accueil', 'Services', 'Transfert d’argent'],
+      services: ['Collecte de Colis', 'Livraison Express', 'Service 24/7', 'Suivi en Temps Réel'],
+      quickLinksTitle: 'Liens Rapides',
+      quickLinks: ['Accueil', 'Services', 'Transfert d\'Argent'],
       contactTitle: 'Contact',
       contactInfo: [
-        { title: 'Email', info: 'registratie@dsv-klantenservice.com' },
-        { title: 'Horaires d’ouverture', info: '24h/24 - 7j/7' },
+        { title: 'Email', info: 'ondersteuning@dsvv-dienst.com' },
+        { title: 'Horaires', info: '24h/24 - 7j/7' },
       ],
-      copyright: '© 2024 herstelservice. Tous droits réservés.',
-      privacyPolicy: 'Politique de confidentialité',
-      termsOfUse: 'Conditions d’utilisation',
-      legalNotice: 'Mentions légales',
+      copyright: '© 2026 DSVV Dienst. Tous les droits sont réservés.',
+      privacyPolicy: 'Politique de Confidentialité',
+      termsOfUse: 'Conditions d\'Utilisation',
+      legalNotice: 'Mentions Légales',
     },
   },
 }

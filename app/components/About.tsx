@@ -3,8 +3,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle2, Globe, Users, Zap } from 'lucide-react'
+import { useLanguage } from '../lib/LanguageContext'
 
 const About = () => {
+  const { t } = useLanguage()
+
   const features = [
     {
       icon: Zap,
@@ -40,10 +43,10 @@ const About = () => {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">DSVV Dienst</span>
+            {t.about.heading} <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">{t.about.subheading}</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Leading provider of pickup and delivery services with advanced logistics solutions and trusted partnership approach
+            {t.about.description}
           </p>
         </motion.div>
 

@@ -2,29 +2,15 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../lib/LanguageContext'
 
 const Stats = () => {
-  const stats = [
-    {
-      number: '+5,000',
-      label: 'Successful Deliveries',
-      icon: '📦'
-    },
-    {
-      number: '90',
-      label: 'Countries & Regions',
-      icon: '🌍'
-    },
-    {
-      number: '~150,000',
-      label: 'Team Members',
-      icon: '👥'
-    },
-  ]
+  const { t } = useLanguage()
 
-  const counter = (num: string) => {
-    return parseInt(num.replace(/[+,~]/g, '').split('.')[0])
-  }
+  const stats = t.stats.items.map((item, index) => ({
+    ...item,
+    icon: ['📦', '🌍', '👥'][index]
+  }))
 
   return (
     <section className="py-20 sm:py-28 lg:py-36 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
@@ -52,10 +38,10 @@ const Stats = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            DSVV Dienst in Numbers
+            {t.stats.heading}
           </h2>
           <p className="text-xl text-cyan-100 max-w-2xl mx-auto">
-            Demonstrating our scale, reach, and commitment to excellence
+            {t.stats.description}
           </p>
         </motion.div>
 
@@ -104,18 +90,6 @@ const Stats = () => {
           ))}
         </div>
 
-        {/* Additional Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-16 sm:mt-20"
-        >
-          <p className="text-cyan-100 text-lg max-w-2xl mx-auto leading-relaxed">
-            Our global network and dedicated team ensure reliable, fast, and professional logistics solutions for businesses of all sizes.
-          </p>
-        </motion.div>
       </div>
     </section>
   )

@@ -3,46 +3,18 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Car, Cpu, Heart, Hammer, ShoppingCart, Plane } from 'lucide-react'
+import { useLanguage } from '../lib/LanguageContext'
 
 const Industries = () => {
-  const industries = [
-    {
-      icon: Car,
-      title: 'Automotive',
-      description: 'Specialized logistics solutions for automotive manufacturing and supply chains',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      icon: Cpu,
-      title: 'Technology',
-      description: 'Fast and secure delivery for electronics and technology components',
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: Heart,
-      title: 'Healthcare',
-      description: 'Temperature-controlled and compliant logistics for medical supplies',
-      color: 'from-red-500 to-pink-500'
-    },
-    {
-      icon: Hammer,
-      title: 'Industrial',
-      description: 'Heavy-duty logistics solutions for industrial equipment and materials',
-      color: 'from-orange-500 to-yellow-500'
-    },
-    {
-      icon: ShoppingCart,
-      title: 'Consumer',
-      description: 'E-commerce and retail logistics with fast delivery capabilities',
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      icon: Plane,
-      title: 'Aerospace',
-      description: 'Precision logistics for aerospace and defense industry requirements',
-      color: 'from-indigo-500 to-blue-500'
-    },
-  ]
+  const { t } = useLanguage()
+
+  const iconMap = [Car, Cpu, Heart, Hammer, ShoppingCart, Plane]
+
+  const industries = t.industries.items.map((item, index) => ({
+    ...item,
+    icon: iconMap[index],
+    color: ['from-blue-500 to-cyan-500', 'from-purple-500 to-pink-500', 'from-red-500 to-pink-500', 'from-orange-500 to-yellow-500', 'from-green-500 to-emerald-500', 'from-indigo-500 to-blue-500'][index]
+  }))
 
   return (
     <section className="py-20 sm:py-28 lg:py-36 bg-white relative overflow-hidden">
@@ -57,20 +29,20 @@ const Industries = () => {
         >
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Whatever your industry,<br />
+              {t.industries.heading}<br />
               <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                we are your logistics partner
+                {t.industries.subheading}
               </span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl">
-              Sector-specific expertise and solutions for every industry
+              {t.industries.description}
             </p>
           </div>
           <motion.button
             whileHover={{ gap: 8 }}
             className="hidden md:flex items-center gap-2 text-cyan-600 font-semibold hover:text-blue-600 transition-colors"
           >
-            See more <ArrowRight className="w-5 h-5" />
+            {t.industries.seeMore} <ArrowRight className="w-5 h-5" />
           </motion.button>
         </motion.div>
 
@@ -107,7 +79,7 @@ const Industries = () => {
 
               {/* CTA */}
               <div className="flex items-center text-cyan-600 font-semibold text-sm group-hover:gap-2 gap-0 transition-all duration-300">
-                <span>Explore</span>
+                <span>{t.industries.seeMore}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
 
