@@ -9,11 +9,10 @@ const Gallery = () => {
   const { t } = useLanguage()
 
   const galleryImages = [
-    '/image 1.jpeg',
-    '/image 2.jpeg',
-    '/image 3.jpeg',
-    '/image 4.jpeg',
-    '/image 5.jpeg',
+    '/Récupération de Colis.jpg',
+    '/Livraison Express.jpg',
+    '/Équipe Experte.jpg',
+    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
   ]
   const galleryItems = t.gallery.items.map((item, index) => ({
     ...item,
@@ -73,7 +72,7 @@ const Gallery = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 lg:mb-20"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 lg:mb-20"
         >
           {galleryItems.map((item, index) => (
             <motion.div
