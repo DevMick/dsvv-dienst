@@ -10,7 +10,8 @@ const Solutions = () => {
 
   const solutions = t.solutions.items.map((item, index) => ({
     ...item,
-    image: ['/image 1.jpeg', '/image 2.jpeg', '/image 3.jpeg', '/image 4.jpeg', '/image 5.jpeg'][index]
+    image: ['/image 1.jpeg', '/image 2.jpeg', '/image 3.jpeg'][index],
+    color: ['from-blue-500 to-cyan-500', 'from-purple-500 to-pink-500', 'from-green-500 to-emerald-500'][index]
   }))
 
   return (
