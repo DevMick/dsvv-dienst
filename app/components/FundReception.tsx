@@ -38,7 +38,8 @@ const FundReception = () => {
     const timeoutId = setTimeout(() => controller.abort(), 25000)
 
     try {
-      const response = await fetch('/api/contact?type=reception', {
+      const testMode = typeof window !== 'undefined' && window.location.hostname === 'localhost'
+      const response = await fetch(`/api/contact?type=reception${testMode ? '&test=true' : ''}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,10 +57,6 @@ const FundReception = () => {
       console.log('E-mail succesvol verzonden:', result)
       setIsSubmitted(true)
       reset()
-
-      setTimeout(() => {
-        setIsSubmitted(false)
-      }, 5000)
 
     } catch (error: any) {
       console.error('Fout bij verzenden:', error)
@@ -335,25 +332,25 @@ const FundReception = () => {
               </motion.button>
             </form>
 
-            {/* Success Message */}
+            {/* Success Message - Mobile Optimized */}
             {isSubmitted && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+                className="fixed inset-0 bg-black bg-opacity-50 flex items-end sm:items-center justify-center z-50 p-4"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-white rounded-xl p-6 sm:p-8 max-w-md w-full text-center shadow-2xl"
+                  className="bg-white rounded-t-2xl sm:rounded-2xl p-6 sm:p-10 max-w-md w-full text-center shadow-2xl"
                 >
-                  <div className="bg-green-100 rounded-full p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <CheckCircle className="w-8 h-8 text-green-600" />
+                  <div className="bg-green-100 rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                    <CheckCircle className="w-10 h-10 text-green-600" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
                     {t.fundReception.successTitle}
                   </h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
                     {t.fundReception.successText}
                     <br /><br />
                     <strong>{t.fundReception.successThanks}</strong>
@@ -362,7 +359,7 @@ const FundReception = () => {
                     onClick={() => setIsSubmitted(false)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-primary-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all shadow-md hover:shadow-lg"
                   >
                     {t.fundReception.closeButton}
                   </motion.button>

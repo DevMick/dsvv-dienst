@@ -38,7 +38,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden" suppressHydrationWarning>
       {/* Full Screen Image Carousel Background */}
       <AnimatePresence mode="wait">
         <motion.div

@@ -287,7 +287,17 @@ export async function POST(request: NextRequest) {
 
     // Déterminer le type de formulaire basé sur l'URL ou un paramètre
     const url = new URL(request.url)
-    url.searchParams.get('type') || 'reception' // Type par défaut
+    const formType = url.searchParams.get('type') || 'reception'
+
+    // Mode test : retourner le succès immédiatement sans envoyer d'email
+    if (process.env.NODE_ENV === 'development' && url.searchParams.get('test') === 'true') {
+      console.log('Mode test activé - Email non envoyé')
+      return NextResponse.json({
+        success: true,
+        message: 'Email test réussi (mode test)',
+        messageId: 'test-' + Date.now()
+      })
+    }
 
     // Valider les données
     const validation = validateFormData(body)
