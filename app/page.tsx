@@ -7,7 +7,6 @@ import About from './components/About'
 import Services from './components/Services'
 import Testimonials from './components/Testimonials'
 import Gallery from './components/Gallery'
-import DSVGallery from './components/DSVGallery'
 import FundReception from './components/FundReception'
 import Footer from './components/Footer'
 
@@ -25,7 +24,6 @@ export default function Home() {
         <FundReception />
         <Testimonials />
         <Gallery />
-        <DSVGallery />
       </main>
       <Footer />
     </div>
