@@ -102,13 +102,13 @@ const Hero = () => {
 
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white z-20"
+            className="text-white z-20 lg:pr-4"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -125,7 +125,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+              className="text-4xl md:text-6xl font-bold mb-4 leading-tight"
             >
               <span className="bg-gradient-to-r from-white via-blue-200 to-cyan-300 bg-clip-text text-transparent">
                 {t.hero.titleTop}
@@ -140,7 +140,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-200 mb-8 max-w-lg leading-relaxed"
+              className="text-base md:text-lg text-gray-200 mb-6 max-w-lg leading-relaxed"
             >
               {t.hero.subtitlePre}
               <span className="text-cyan-300 font-semibold"> {t.hero.subtitleFast}</span>,
@@ -195,7 +195,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative hidden lg:flex items-center justify-center z-20"
           >
-            <div className="relative w-full max-w-md aspect-square rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               {/* Image Carousel */}
               <AnimatePresence mode="wait">
                 <motion.img
