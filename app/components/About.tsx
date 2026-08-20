@@ -59,26 +59,23 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-3xl font-bold text-gray-900 mb-6">
-              Connecting businesses worldwide
+              {t.about.heading}
             </h3>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              DSVV Dienst is a trusted logistics partner providing comprehensive pickup and delivery solutions across the region. With cutting-edge technology and a team of certified professionals, we ensure your packages reach their destination safely and on time.
-            </p>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Our commitment to excellence, reliability, and customer satisfaction has made us the preferred choice for businesses of all sizes.
+              {t.about.companyDescription}
             </p>
             <div className="flex gap-4">
               <div className="text-center">
                 <div className="text-3xl font-bold text-cyan-600">5000+</div>
-                <div className="text-sm text-gray-600">Deliveries</div>
+                <div className="text-sm text-gray-600">{t.stats.items[0].label}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-cyan-600">98%</div>
-                <div className="text-sm text-gray-600">Satisfaction</div>
+                <div className="text-sm text-gray-600">{t.services.stats[1].label}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-cyan-600">24/7</div>
-                <div className="text-sm text-gray-600">Support</div>
+                <div className="text-sm text-gray-600">{t.services.stats[3].label}</div>
               </div>
             </div>
           </motion.div>
@@ -91,28 +88,14 @@ const About = () => {
             className="relative"
           >
             <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-8 text-white shadow-2xl">
-              <h4 className="text-2xl font-bold mb-6">Our Promise</h4>
+              <h4 className="text-2xl font-bold mb-6">{t.about.promise}</h4>
               <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  <span>Lightning-fast pickups within 2 hours</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  <span>Real-time GPS tracking of your packages</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  <span>Premium packaging and full insurance</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  <span>Certified and experienced professionals</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  <span>Competitive rates and transparent pricing</span>
-                </li>
+                {t.about.items.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </motion.div>
@@ -125,7 +108,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Core Values</h3>
+          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">{t.services.headingHighlight === 'diensten' ? 'Waarden' : 'Valeurs'}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <motion.div
